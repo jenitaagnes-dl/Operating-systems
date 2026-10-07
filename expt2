@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+int main() {
+    int n, i, sum = 0, num, digit, largest = 0, rev = 0, a, b;
+    char op;
+
+    printf("Enter n: ");
+    scanf("%d", &n);
+
+    for (i = 1; i <= n; i++)
+        if (i % 2)
+            sum += i;
+
+    printf("Sum of odd numbers = %d\n", sum);
+
+    printf("Enter two numbers and operator: ");
+    scanf("%d %d %c", &a, &b, &op);
+
+    if (op == '+')
+        printf("Result = %d\n", a + b);
+    else if (op == '-')
+        printf("Result = %d\n", a - b);
+    else if (op == '*')
+        printf("Result = %d\n", a * b);
+    else if (op == '/')
+        printf("Result = %d\n", a / b);
+
+    printf("Enter number: ");
+    scanf("%d", &num);
+
+    int temp = num;
+
+    while (temp > 0) {
+        digit = temp % 10;
+
+        if (digit > largest)
+            largest = digit;
+
+        rev = rev * 10 + digit;
+        temp /= 10;
+    }
+
+    printf("Largest digit = %d\n", largest);
+    printf("Reverse = %d\n", rev);
+
+    return 0;
+}
