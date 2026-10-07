@@ -1,0 +1,5 @@
+#include <stdio.h>
+int main() {
+    printf("Operating Systems Lab - Experiment 1\n");
+    return 0;
+}
