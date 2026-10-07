@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int n, i, bt[20], wt[20] = {0}, tat[20];
+    int tw = 0, tt = 0;
+
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++) {
+        scanf("%d", &bt[i]);
+    }
+
+    for (i = 1; i < n; i++) {
+        wt[i] = wt[i - 1] + bt[i - 1];
+    }
+
+    for (i = 0; i < n; i++) {
+        tat[i] = wt[i] + bt[i];
+        tw += wt[i];
+        tt += tat[i];
+    }
+
+    printf("Average Waiting Time = %.2f\n", (float)tw / n);
+    printf("Average Turnaround Time = %.2f\n", (float)tt / n);
+
+    return 0;
+}
